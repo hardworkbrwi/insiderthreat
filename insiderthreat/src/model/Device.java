@@ -17,4 +17,15 @@ public class Device extends Node {
 		this.id = id;
 	}
 	
+	public void putDevice( Device device ) {
+		if( this.right == null ) {
+			this.right = device;
+		}else {
+			Node next = this.right.right;
+			while( next.getRight() != null ) {
+				next = next.right;
+			}
+			next.setRight( device );
+		}
+	}
 }

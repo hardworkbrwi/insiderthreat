@@ -10,6 +10,10 @@ public class Main {
 		Device device = new Device();
 		device.setId("1234");
 		
+		Device device_01 = new Device();
+		device.setId("1234");
+		
+		
 		User user = new User();
 		user.getDown().setDown( device );
 		

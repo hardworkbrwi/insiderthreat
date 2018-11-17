@@ -8,6 +8,9 @@ public class Observant extends Node {
 		this.left = null;
 		this.right = null;
 		this.down = null;
-
+		
+		for(int i = 0; i < 23; i++) {
+			this.histogram[i] = 0;
+		}
 	}
 }
