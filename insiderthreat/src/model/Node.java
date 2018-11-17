@@ -6,22 +6,22 @@ public abstract class Node {
 	protected Node right;
 	protected Node down;
 	
-	protected Node getLeft() {
+	public Node getLeft() {
 		return left;
 	}
-	protected void setLeft(Node left) {
+	public void setLeft(Node left) {
 		this.left = left;
 	}
-	protected Node getRight() {
+	public Node getRight() {
 		return right;
 	}
-	protected void setRight(Node right) {
+	public void setRight(Node right) {
 		this.right = right;
 	}
-	protected Node getDown() {
+	public Node getDown() {
 		return down;
 	}
-	protected void setDown(Node down) {
+	public void setDown(Node down) {
 		this.down = down;
 	}
 	
