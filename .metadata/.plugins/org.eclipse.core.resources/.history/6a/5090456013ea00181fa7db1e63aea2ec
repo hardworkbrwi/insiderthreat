@@ -1,0 +1,11 @@
+package model;
+
+public class Observant extends Node {
+	private int histogram[];
+	
+	public Observant() {
+		histogram = new int[24];
+		this.left = null;
+		this.right = null;
+	}
+}

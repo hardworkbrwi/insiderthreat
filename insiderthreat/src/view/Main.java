@@ -1,6 +1,7 @@
 package view;
 
 import model.Device;
+import model.Observant;
 import model.User;
 
 public class Main {
@@ -10,12 +11,10 @@ public class Main {
 		Device device = new Device();
 		device.setId("1234");
 		
-		Device device_01 = new Device();
-		device.setId("1234");
-		
-		
 		User user = new User();
-		user.getDown().setDown( device );
+		
+		Observant obs = ( Observant ) user.getDown();
+		obs.putDevice(device);
 		
 		Device divice1 = (Device) user.getDown().getDown();
 		System.out.println(divice1.getId());;
