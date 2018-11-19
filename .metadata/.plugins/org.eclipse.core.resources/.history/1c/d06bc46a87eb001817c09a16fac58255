@@ -1,0 +1,35 @@
+package view;
+
+import model.Device;
+import model.Http;
+import model.Observant;
+import model.User;
+import model.Activity;
+import model.Logon;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Activity http = new Http();
+		http.setId("123");
+		
+		Activity logon = new Logon();
+		logon.setId("456");
+		
+		Device dev = new Device();
+		
+		dev.addActivity(http);
+		dev.addActivity(logon);
+		
+		for( Activity ativ: dev.getActivitys() ) {
+			System.out.println( ativ.getId() );
+			System.out.println( ativ.getDate() );
+			System.out.println( ativ.getUser() );
+			System.out.println( ativ.getPc() );
+			
+			if( ativ instanceof Http ) {
+				System.out.println( ( (Http) ativ ).getUrl() );
+			}
+		}
+	}
+}

@@ -1,0 +1,15 @@
+package view;
+
+import model.Device;
+import model.Http;
+import model.Observant;
+import model.User;
+import model.Activity;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Activity http = new Http();
+		http.setId("123");
+	}
+}

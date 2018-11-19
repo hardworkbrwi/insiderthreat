@@ -1,12 +1,14 @@
 package model;
 
-public class Device extends Node {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Device {
 	private String id;
+	private List<Activity> activitys;
 	
 	public Device() {
-		this.left = null;
-		this.right = null;
-		this.down = null;
+		activitys = new ArrayList<Activity>();
 	}
 
 	public String getId() {
@@ -17,15 +19,11 @@ public class Device extends Node {
 		this.id = id;
 	}
 	
-	public void putDevice( Device device ) {
-		if( this.right == null ) {
-			this.right = device;
-		}else {
-			Node next = this.right.right;
-			while( next.getRight() != null ) {
-				next = next.right;
-			}
-			next.setRight( device );
-		}
+	public void addActivity ( Activity activity ) {
+		this.activitys.add( activity );
+	}
+
+	public List<Activity> getActivitys() {
+		return activitys;
 	}
 }

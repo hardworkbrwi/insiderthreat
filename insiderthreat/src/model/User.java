@@ -1,16 +1,19 @@
 package model;
 
-public class User extends Node {
+import java.util.ArrayList;
+import java.util.List;
+
+public class User {
 	private String name;
 	private String id;
 	private String domian;
 	private String email;
 	private String role;
+	private Observant normal;
+	private Observant suspect;
+	private Observant daily;
 	
 	public User (){
-		this.down = new Observant();
-		this.left = new Observant();
-		this.right = new Observant();
 	}
 
 	public String getName() {
@@ -52,5 +55,6 @@ public class User extends Node {
 	public void setRole(String role) {
 		this.role = role;
 	}
+	
 	
 }

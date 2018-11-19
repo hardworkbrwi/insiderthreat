@@ -1,0 +1,30 @@
+package model;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Observant{
+	private int histogram[];
+	private List<Device> devices;
+	
+	public Observant() {
+		this.histogram = new int[24];
+		this.devices = new ArrayList<Device>();
+		
+		for(int i = 0; i < 23; i++) {
+			this.histogram[i] = 0;
+		}
+	}
+	
+	public void addDevice( Device device ) {
+		this.devices.add( device );
+	}
+	
+	public void addActivity( Activity activity, String idDevice ) {
+		for ( Device device: devices ) {
+			if(device.getId().equalsIgnoreCase( idDevice )) {
+				
+			}
+		}
+	}
+}
