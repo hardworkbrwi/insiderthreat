@@ -1,15 +1,22 @@
-package view;
+package src.view;
 
-import model.Device;
-import model.Http;
-import model.Observant;
-import model.User;
-import model.Activity;
-import model.Logon;
+import src.model.Device;
+import src.model.Http;
+import src.model.Observant;
+import src.model.User;
+import src.model.Activity;
+import src.model.Data;
+import src.model.Logon;
 
 public class Main {
 
 	public static void main(String[] args) {
+		Data dat = new Data();
+		dat.loadFileHttp();
+		dat.loadFileLogon();
+		dat.loadFileMflash();
+		dat.loadFileUser();
+		
 		Http http = new Http();
 		http.setId("123");
 		http.setUrl("www.google.com");
