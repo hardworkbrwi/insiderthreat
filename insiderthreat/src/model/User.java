@@ -1,19 +1,16 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class User {
+public class User extends Node {
 	private String name;
 	private String id;
-	private String domian;
+	private String domain;
 	private String email;
 	private String role;
-	private Observant normal;
-	private Observant suspect;
-	private Observant daily;
 	
 	public User (){
+		this.down = new Observant();
+		this.left = new Observant();
+		this.right = new Observant();
 	}
 
 	public String getName() {
@@ -32,12 +29,12 @@ public class User {
 		this.id = id;
 	}
 
-	public String getDomian() {
-		return domian;
+	public String getDomain() {
+		return domain;
 	}
 
-	public void setDomian(String domian) {
-		this.domian = domian;
+	public void setDomain(String domain) {
+		this.domain = domain;
 	}
 
 	public String getEmail() {
@@ -56,5 +53,13 @@ public class User {
 		this.role = role;
 	}
 	
+	public void printInfo() {
+		System.out.println("INFORMAÇÕES:\n"
+				   + "Nome:    " + name + "\n"
+				   + "ID:      " + id + "\n"
+				   + "Domínio: " + domain + "\n"
+				   + "Email:   " + email + "\n"
+				   + "Cargo:   " + role);
+	}
 	
 }

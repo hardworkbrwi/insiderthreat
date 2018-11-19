@@ -1,15 +1,31 @@
 package model;
 
 public class MFlash extends Activity {
-	private boolean conect;
 
-	public boolean isConect() {
+	String conect;
+
+	public MFlash() {
+		conect = "";
+	}	
+
+	/**
+	 * @return the conect
+	 */
+	public String getConect() {
 		return conect;
 	}
 
-	public void setConect(boolean conect) {
+	/**
+	 * @param conect the conect to set
+	 */
+	public void setConect(String conect) {
 		this.conect = conect;
 	}
-	
-	
+
+	@Override
+	public void printInfo() {
+		super.printInfo();
+		System.out.println("Conectado:     " + conect + "\n");
+	}
+
 }
