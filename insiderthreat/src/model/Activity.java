@@ -1,12 +1,23 @@
 package model;
 
-public class Activity extends Node {
+/**
+ * @author Cangaceiros, Inc.
+ * @version 1.0
+ * 
+ * Classe que define as possíveis atividades executadas por um usuário no
+ * sistema a partir do seu perfil.
+ * */
+public class Activity {
 	
-	protected String id;
-	protected String date;
-	protected String user;
-	protected String pc;
-
+	protected String id; /** Identifica a atividade. */
+	protected String date; /** Identifica a data e hora. */
+	protected String user; /** Identifica o usuário. */
+	protected String pc; /** Identifica o equipamento utilizado. */
+	
+	/**
+	 * Construtor padrão da classe Activity responsável por 
+	 * inicializar os atributos do objeto.
+	 * */
 	public Activity() {
 		id = "";
 		date = "";
@@ -15,62 +26,73 @@ public class Activity extends Node {
 	}
 
 	/**
-	 * @return the id
+	 * Obtém o id.
+	 * @return o <code>String</code> especificando o id.
 	 */
 	public String getId() {
 		return id;
 	}
 
 	/**
-	 * @param id the id to set
+	 * Configura o id da atividade.
+	 * @param id da atividade.
 	 */
-	public void setId(String id) {
+	public void setId( String id ) {
 		this.id = id;
 	}
 
 	/**
-	 * @return the date
+	 * Obtém o data e hora do evento.
+	 * @return o <code>String</code> especificando a data/hora.
 	 */
 	public String getDate() {
 		return date;
 	}
 
 	/**
-	 * @param date the date to set
+	 * Configura a data/hora da atividade.
+	 * @param data/hora da atividade.
 	 */
-	public void setDate(String date) {
+	public void setDate( String date ) {
 		this.date = date;
 	}
 
 	/**
-	 * @return the user
+	 * Obtém o usuário da atividade.
+	 * @return o <code>String</code> especificando o usuário. 
 	 */
 	public String getUser() {
 		return user;
 	}
 
 	/**
-	 * @param user the user to set
+	 * Configura o usuário da atividade.
+	 * @param usuário da atividade.
 	 */
-	public void setUser(String user) {
+	public void setUser( String user ) {
 		this.user = user;
 	}
 
 	/**
-	 * @return the pc
+	 * Obtém o equipamento utilizado na atividade.
+	 * @return o <code>String</code> especificando o equipamento. 
 	 */
 	public String getPc() {
 		return pc;
 	}
 
 	/**
-	 * @param pc the pc to set
+	 * Configura o equipamento da atividade.
+	 * @param equipamento da atividade.
 	 */
-	public void setPc(String pc) {
+	public void setPc( String pc ) {
 		this.pc = pc;
 	}
 	
-	public void printInfo() {
+	/**
+	 * Imprime na saída padrão as informações da atividade.
+	 * */	
+	protected void printInfo() {
 		System.out.println("INFORMAÇÕES:\n"
 				   + "ID:      " + id + "\n"
 				   + "Data:    " + date + "\n"
