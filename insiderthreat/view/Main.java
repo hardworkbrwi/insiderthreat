@@ -1,21 +1,22 @@
-package src.view;
+package view;
 
-import src.model.Device;
-import src.model.Http;
-import src.model.Observant;
-import src.model.User;
-import src.model.Activity;
-import src.model.Data;
-import src.model.Logon;
+import model.Device;
+import model.Http;
+import model.Observant;
+import model.User;
+
+import java.io.File;
+
+import model.Activity;
+import model.Data;
+import model.Logon;
 
 public class Main {
 
-	public static void main(String[] args) {
-		Data dat = new Data();
-		dat.loadFileHttp();
-		dat.loadFileLogon();
-		dat.loadFileMflash();
-		dat.loadFileUser();
+	public static void main(String[] args) throws Exception {
+		File file = new File( "/home/bruno/Documentos/BTI/LP2/projetoUnid3/http.csv" );
+		Data dados = new Data();
+		dados.loadFile(file);
 		
 		Http http = new Http();
 		http.setId("123");

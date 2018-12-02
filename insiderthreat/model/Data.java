@@ -66,7 +66,7 @@ public class Data {
 		} else if( fileName.equalsIgnoreCase( "LDAP.csv" ) ) {
 			usr = new User();
 		} else {
-			throw( new Exception() );
+			//throw( new Exception() );
 		}
 		
 	
@@ -146,8 +146,8 @@ public class Data {
 			// fecha o arquivo para evitar problemas de memória e segurança.
 			readFile.close();
 		} catch ( IOException e ) { // Para alguma falha na leitura do arquivo trata exceção IOException
-			System.err.printf("Erro ao tentar abrir o arquivo: %s.\n,"
-					+ e.getMessage());
+			System.err.printf("Erro ao tentar abrir o arquivo: \n"
+					+ e.getMessage() + "\n");
 		}
 	}
 

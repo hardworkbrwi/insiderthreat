@@ -1,13 +1,22 @@
 package model;
 
-public class User extends Node {
+public class User {
 	private String name;
 	private String id;
 	private String domain;
 	private String email;
 	private String role;
+	private Observant down;
+	private Observant left;
+	private Observant right;
 	
 	public User (){
+		this.name = "";
+		this.id = "";
+		this.domain = "";
+		this.email = "";
+		this.role = "";
+		this.role = "";
 		this.down = new Observant();
 		this.left = new Observant();
 		this.right = new Observant();

@@ -20,6 +20,12 @@ public class Observant{
 		this.devices.add( device );
 	}
 	
+	public void addDevice( String id ) {
+		Device device = new Device();
+		device.setId( id );
+		this.devices.add( device );		
+	}
+	
 	public void addActivityInDevice( Activity activity, String idDevice ) {
 		for( Device device: devices ) {
 			if( device.getId().equalsIgnoreCase( idDevice ) ){
@@ -41,9 +47,9 @@ public class Observant{
 					if( ativ instanceof Http ) {
 						System.out.println( ( (Http) ativ ).getUrl() );
 					}else if( ativ instanceof Logon ) {
-						System.out.println( ( (Logon) ativ ).isAccess() );
+						System.out.println( ( (Logon) ativ ).getAccess() );
 					}else if( ativ instanceof MFlash ) {
-						System.out.println( ( (MFlash) ativ ).isConect() );
+						System.out.println( ( (MFlash) ativ ).getConect() );
 					}
 				}
 				break;
@@ -62,9 +68,9 @@ public class Observant{
 				if( ativ instanceof Http ) {
 					System.out.println( ( (Http) ativ ).getUrl() );
 				}else if( ativ instanceof Logon ) {
-					System.out.println( ( (Logon) ativ ).isAccess() );
+					System.out.println( ( (Logon) ativ ).getAccess() );
 				}else if( ativ instanceof MFlash ) {
-					System.out.println( ( (MFlash) ativ ).isConect() );
+					System.out.println( ( (MFlash) ativ ).getConect() );
 				}
 			}
 		}
