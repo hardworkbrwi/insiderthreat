@@ -5,10 +5,10 @@ import java.util.List;
 
 public class Device {
 	private String id;
-	private List<Activity> activitys;
+	private List<Activity> activities;
 	
 	public Device() {
-		activitys = new ArrayList<Activity>();
+		activities = new ArrayList<Activity>();
 	}
 
 	public String getId() {
@@ -20,10 +20,10 @@ public class Device {
 	}
 	
 	public void addActivity ( Activity activity ) {
-		this.activitys.add( activity );
+		this.activities.add( activity );
 	}
 
 	public List<Activity> getActivitys() {
-		return activitys;
+		return activities;
 	}
 }

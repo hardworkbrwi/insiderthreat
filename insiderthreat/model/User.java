@@ -6,9 +6,9 @@ public class User {
 	private String domain;
 	private String email;
 	private String role;
-	private Observant down;
-	private Observant left;
-	private Observant right;
+	private Observant threat;
+	private Observant normal;
+	private Observant current;
 	
 	public User (){
 		this.name = "";
@@ -17,9 +17,9 @@ public class User {
 		this.email = "";
 		this.role = "";
 		this.role = "";
-		this.down = new Observant();
-		this.left = new Observant();
-		this.right = new Observant();
+		this.threat = new Observant();
+		this.normal = new Observant();
+		this.current = new Observant();
 	}
 
 	public String getName() {

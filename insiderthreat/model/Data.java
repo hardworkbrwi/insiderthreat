@@ -40,6 +40,204 @@ public class Data {
 	}
 	
 	/**
+	 * Método responsável por ler e carregar no sistema os dados dos logs das
+	 * atividades de acesso à páginas web. 
+	 **/
+	public void loadFileHttp() {
+	
+		try {
+			// instancia leitor de arquivo
+			FileReader file = new FileReader( "/home/bruno/Documentos/BTI/LP2/projetoUnid3/http.csv" );
+			BufferedReader readFile = new BufferedReader( file );
+			// instancia objeto http
+			Http http = new Http();
+			// captura primeira linha (cabeçalho)
+			String line = readFile.readLine();
+			// quebra linha em partes separadas pela vírgula
+			String[] peaces = line.split( "," );
+			
+			/* inicia a estrutura de repetição a fim de percorrer todo o arquivo,
+			   coletando as strings linha a linha.
+			*/
+			do {
+				// lê a próxima linha
+				line = readFile.readLine();
+				/* verifica se o arquivo chegou ao final, ou seja, line recebe null.
+				   caso contrário, quebra string em partes separadas por ','.
+				*/
+				if( line != null ) {
+					peaces = line.split( "," );
+				}
+				
+				/* Muda status dos campos do objeto Http, adicionando as partes
+				   da String lida.
+				*/
+				http.setId( peaces[0] );
+				http.setDate( peaces[1] );
+				http.setUser( peaces[2] );
+				http.setPc( peaces[3] );
+				http.setUrl( peaces[4] );
+				
+				// http.printInfo();
+				
+				// adiciona o objeto Http em sua respectiva lista (https).
+				https.add( http );
+				
+				//https.get( 0 ).printInfo();
+				//index++;
+				
+			} while ( line != null );
+			
+			// Imprime na saída padrão a quantidade de itens da lista
+			System.out.println( https.size() );
+			
+			// fecha o arquivo para evitar problemas de memória e segurança.
+			readFile.close();
+		} catch ( IOException e ) { // Para alguma falha na leitura do arquivo trata exceção IOException
+			System.err.printf("Erro ao tentar abrir o arquivo: %s.\n,"
+					+ e.getMessage());
+		}
+	}
+	
+	/**
+	 * Método responsável por ler e carregar no sistema os dados dos logs das
+	 * atividades de utilização de dispositivos flashdrives. 
+	 * */
+	public void loadFileMflash() {
+		
+		try {
+			// instancia leitor de arquivo
+			FileReader file = new FileReader( "/home/bruno/Documentos/BTI/LP2/projetoUnid3/device.csv" );
+			BufferedReader readFile = new BufferedReader( file );
+			// instancia objeto mflash
+			MFlash mflash = new MFlash();
+			// captura primeira linha (cabeçalho)
+			String line = readFile.readLine();
+			
+			// quebra linha em partes separadas pela vírgula
+			String[] peaces = line.split( "," );
+						
+			do {
+				// próxima linha
+				line = readFile.readLine();
+				// quebra string em partes baseada em ','
+				if(line != null) {
+					peaces = line.split( "," );
+				}
+				
+				// Muda status dos campos de um objeto MFlash
+				mflash.setId( peaces[0] );
+				mflash.setDate( peaces[1] );
+				mflash.setUser( peaces[2] );
+				mflash.setPc( peaces[3] );
+				mflash.setConect( peaces[4] );
+				
+				// adiciona a lista de Dispositivos
+				mflashs.add( mflash );
+				
+				//mflashs.get( 0 ).printInfo();
+				//index++;
+				
+			} while ( line != null );
+			
+			System.out.println( mflashs.size() );
+			
+			readFile.close();
+		} catch (IOException e) {
+			System.err.printf("Erro ao tentar abrir o arquivo: %s.\n,"
+					+ e.getMessage());
+		}
+	}
+	
+	public void loadFileLogon() {
+			
+			try {
+				// instancia leitor de arquivo
+				FileReader file = new FileReader( "/home/bruno/Documentos/BTI/LP2/projetoUnid3/logon.csv" );
+				BufferedReader readFile = new BufferedReader( file );
+				// instancia objeto Logon
+				Logon logon = new Logon();
+				// captura primeira linha (cabeçalho)
+				String line = readFile.readLine();
+				String[] peaces = line.split( "," );
+							
+				do {
+					// próxima linha
+					line = readFile.readLine();
+					// quebra string em partes baseada em ','
+					if(line != null) {
+						peaces = line.split( "," );
+					}
+					
+					// Muda status dos campos de um objeto Logon
+					logon.setId( peaces[0] );
+					logon.setDate( peaces[1] );
+					logon.setUser( peaces[2] );
+					logon.setPc( peaces[3] );
+					logon.setAccess( peaces[4] );
+					
+					// adiciona a lista de Dispositivos
+					logons.add( logon );
+					
+					//logons.get( 0 ).printInfo();
+					//index++;
+					
+				} while ( line != null );
+				
+				System.out.println( logons.size() );
+				
+				readFile.close();
+			} catch (IOException e) {
+				System.err.printf("Erro ao tentar abrir o arquivo: %s.\n,"
+						+ e.getMessage());
+			}
+		}
+	
+	public void loadFileUser() {
+		
+		try {
+			// instancia leitor de arquivo
+			FileReader file = new FileReader( "/home/bruno/Documentos/BTI/LP2/projetoUnid3/LDAP.csv" );
+			BufferedReader readFile = new BufferedReader( file );
+			// instancia objeto User
+			User user = new User();
+			// captura primeira linha (cabeçalho)
+			String line = readFile.readLine();
+			String[] peaces = line.split( "," );
+						
+			do {
+				// próxima linha
+				line = readFile.readLine();
+				// quebra string em partes baseada em ','
+				if(line != null) {
+					peaces = line.split( "," );
+				}
+				
+				// Muda status dos campos de um objeto User
+				user.setName( peaces[0] );
+				user.setId( peaces[1] );
+				user.setDomain( peaces[2] );
+				user.setEmail( peaces[3] );
+				user.setRole( peaces[4] );
+				
+				// adiciona a lista de Dispositivos
+				users.add( user );
+				
+				//users.get( 0 ).printInfo();
+				//index++;
+				
+			} while ( line != null );
+			
+			System.out.println( users.size() );
+			
+			readFile.close();
+		} catch (IOException e) {
+			System.err.printf("Erro ao tentar abrir o arquivo: %s.\n,"
+					+ e.getMessage());
+		}
+	}
+	
+	/**
 	 * Método responsável por ler e carregar no sistema os dados de logs das
 	 * atividades ou usuários.
 	 * 
@@ -53,10 +251,11 @@ public class Data {
 		Activity act = null;
 		User usr = null;
 		
+		/*
 		/* identifica qual o arquivo de log será executado e inicializa os
 		   objetos act ou usr.
 		   Lança uma exceção caso o arquivo não exista
-		*/
+		
 		if( fileName.equalsIgnoreCase( "http.csv" ) ) {
 			act = new Http();
 		} else if( fileName.equalsIgnoreCase( "device.csv" ) ) {
@@ -68,9 +267,25 @@ public class Data {
 		} else {
 			//throw( new Exception() );
 		}
-		
+		*/
 	
 		try {
+			/* identifica qual o arquivo de log será executado e inicializa os
+			   objetos act ou usr.
+			   Lança uma exceção caso o arquivo não exista
+			*/
+			if( fileName.equalsIgnoreCase( "http.csv" ) ) {
+				act = new Http();
+			} else if( fileName.equalsIgnoreCase( "device.csv" ) ) {
+				act = new MFlash();
+			} else if( fileName.equalsIgnoreCase( "logon.csv" ) ) {
+				act = new Logon();
+			} else if( fileName.equalsIgnoreCase( "LDAP.csv" ) ) {
+				usr = new User();
+			} else {
+				//throw( new Exception() );
+			}
+			
 			/* instancia leitor de arquivo passando como parâmetro o caminho
 			   absoluto de file.
 			*/
@@ -86,7 +301,7 @@ public class Data {
 			/* inicia a estrutura de repetição, a fim de percorrer todo o arquivo,
 			   coletando a string linha a linha.
 			*/
-			do {
+			do {				
 				// lê a próxima linha
 				line = readFile.readLine();
 				/* verifica se o arquivo chegou ao final, ou seja, line recebe null.
@@ -147,7 +362,7 @@ public class Data {
 			readFile.close();
 		} catch ( IOException e ) { // Para alguma falha na leitura do arquivo trata exceção IOException
 			System.err.printf("Erro ao tentar abrir o arquivo: \n"
-					+ e.getMessage() + "\n");
+					+ e.getMessage());
 		}
 	}
 
