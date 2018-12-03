@@ -29,7 +29,7 @@ public class Logon extends Activity {
 
 	/**
 	 * Configura o status de access.
-	 * @param status de acesso.
+	 * @param access status de acesso.
 	 */
 	public void setAccess( String access ) {
 		this.access = access;

@@ -51,7 +51,7 @@ public class Activity {
 
 	/**
 	 * Configura a data/hora da atividade.
-	 * @param data/hora da atividade.
+	 * @param date data/hora da atividade.
 	 */
 	public void setDate( String date ) {
 		this.date = date;
@@ -67,7 +67,7 @@ public class Activity {
 
 	/**
 	 * Configura o usuário da atividade.
-	 * @param usuário da atividade.
+	 * @param user usuário da atividade.
 	 */
 	public void setUser( String user ) {
 		this.user = user;
@@ -83,7 +83,7 @@ public class Activity {
 
 	/**
 	 * Configura o equipamento da atividade.
-	 * @param equipamento da atividade.
+	 * @param pc equipamento da atividade.
 	 */
 	public void setPc( String pc ) {
 		this.pc = pc;

@@ -254,7 +254,7 @@ public class Data {
 	 * Método responsável por ler e carregar no sistema os dados de logs das
 	 * atividades ou usuários.
 	 * 
-	 * @param Objeto File que recupera informações do arquivo de log
+	 * @param file Objeto File que recupera informações do arquivo de log
 	 * @see java.io.File 
 	 **/
 	public void loadFile( File file ) throws Exception {
@@ -383,7 +383,7 @@ public class Data {
 
 	/**
 	 * Obtém a lista de atividades de acesso à páginas.
-	 * @return o <code>List<Http></code> especificando a lista de atividades Http.
+	 * @return <code>Http</code> especificando a lista de atividades Http.
 	 */
 	public List<Http> getHttps() {
 		return https;
@@ -391,7 +391,7 @@ public class Data {
 
 	/**
 	 * Obtém a lista de atividades de uso de dispositivos flashdrive.
-	 * @return o <code>List<MFlash></code> especificando a lista de atividades MFlash.
+	 * @return <code>MFlash</code> especificando a lista de atividades MFlash.
 	 */
 	public List<MFlash> getMflashs() {
 		return mflashs;
@@ -399,7 +399,7 @@ public class Data {
 
 	/**
 	 * Obtém a lista de atividades de logon de acesso.
-	 * @return o <code>List<Logon></code> especificando a lista de atividades Logon.
+	 * @return <code>Logon</code> especificando a lista de atividades Logon.
 	 */
 	public List<Logon> getLogons() {
 		return logons;
@@ -407,7 +407,7 @@ public class Data {
 
 	/**
 	 * Obtém a lista de usuários do sistema.
-	 * @return o <code>List<User></code> especificando a lista de usuário cadastrados no sistema.
+	 * @return <code>User</code> especificando a lista de usuário cadastrados no sistema.
 	 */
 	public List<User> getUsers() {
 		return users;

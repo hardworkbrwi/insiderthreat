@@ -29,7 +29,7 @@ public class MFlash extends Activity {
 
 	/**
 	 * Configura o status de conect.
-	 * @param status de conect.
+	 * @param conect status de conect.
 	 */
 	public void setConect( String conect ) {
 		this.conect = conect;
