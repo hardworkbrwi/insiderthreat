@@ -39,9 +39,11 @@ public class Data {
 		users = new ArrayList<User>();
 	}
 	
+
 	/**
 	 * Método responsável por ler e carregar no sistema os dados dos logs das
-	 * atividades de acesso à páginas web. 
+	 * atividades de acesso à páginas web.
+	 * @deprecated
 	 **/
 	public void loadFileHttp() {
 	
@@ -102,6 +104,7 @@ public class Data {
 	/**
 	 * Método responsável por ler e carregar no sistema os dados dos logs das
 	 * atividades de utilização de dispositivos flashdrives. 
+	 * @deprecated
 	 * */
 	public void loadFileMflash() {
 		
@@ -149,6 +152,11 @@ public class Data {
 		}
 	}
 	
+	/**
+	 * Método responsável por ler e carregar no sistema os dados dos logs das
+	 * atividades de logon. 
+	 * @deprecated
+	 * */
 	public void loadFileLogon() {
 			
 			try {
@@ -193,6 +201,11 @@ public class Data {
 			}
 		}
 	
+	/**
+	 * Método responsável por ler e carregar no sistema os dados dos logs dos
+	 * usuários. 
+	 * @deprecated
+	 * */
 	public void loadFileUser() {
 		
 		try {
@@ -236,7 +249,7 @@ public class Data {
 					+ e.getMessage());
 		}
 	}
-	
+
 	/**
 	 * Método responsável por ler e carregar no sistema os dados de logs das
 	 * atividades ou usuários.

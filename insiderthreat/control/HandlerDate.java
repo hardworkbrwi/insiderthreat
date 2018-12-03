@@ -40,9 +40,7 @@ public class HandlerDate {
 		
 		int indexUser;
 		int time;
-		String idDevice;
 		int indexDevice;
-		int lastDevice;
 		
 		// Captura a lista de atividades a ser processada
 		List<Logon> acts = data.getLogons();
@@ -74,7 +72,7 @@ public class HandlerDate {
 			data.getUsers().get( indexUser ).getCurrent().getDevices().get( indexDevice ).addActivity( act );			
 		}
 		
-		int[] hist = data.getUsers().get(0).getCurrent().getHistogram();
+		int[] hist = data.getUsers().get(3).getCurrent().getHistogram();
 		for(int val : hist) {
 			System.out.print(val + " ");
 		}
@@ -93,16 +91,7 @@ public class HandlerDate {
 		}
 		return index;
 	}
-	
-	private int changeTime( String time ) {
 		
-		if( time.charAt(0) == '0') {
-			return (int) time.charAt(1);
-		} else {
-			return Integer.parseInt(time);
-		}
-	}
-	
 	private int findDevice( int idUser, String idDevice ) {
 		
 		int index = -1;
