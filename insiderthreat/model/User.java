@@ -62,6 +62,48 @@ public class User {
 		this.role = role;
 	}
 	
+	/**
+	 * @return the threat
+	 */
+	public Observant getThreat() {
+		return threat;
+	}
+
+	/**
+	 * @return the normal
+	 */
+	public Observant getNormal() {
+		return normal;
+	}
+
+	/**
+	 * @return the current
+	 */
+	public Observant getCurrent() {
+		return current;
+	}
+
+	/**
+	 * @param threat the threat to set
+	 */
+	public void setThreat(Observant threat) {
+		this.threat = threat;
+	}
+
+	/**
+	 * @param normal the normal to set
+	 */
+	public void setNormal(Observant normal) {
+		this.normal = normal;
+	}
+
+	/**
+	 * @param current the current to set
+	 */
+	public void setCurrent(Observant current) {
+		this.current = current;
+	}
+
 	public void printInfo() {
 		System.out.println("INFORMAÇÕES:\n"
 				   + "Nome:    " + name + "\n"

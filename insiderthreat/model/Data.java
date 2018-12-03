@@ -270,21 +270,6 @@ public class Data {
 		*/
 	
 		try {
-			/* identifica qual o arquivo de log será executado e inicializa os
-			   objetos act ou usr.
-			   Lança uma exceção caso o arquivo não exista
-			*/
-			if( fileName.equalsIgnoreCase( "http.csv" ) ) {
-				act = new Http();
-			} else if( fileName.equalsIgnoreCase( "device.csv" ) ) {
-				act = new MFlash();
-			} else if( fileName.equalsIgnoreCase( "logon.csv" ) ) {
-				act = new Logon();
-			} else if( fileName.equalsIgnoreCase( "LDAP.csv" ) ) {
-				usr = new User();
-			} else {
-				//throw( new Exception() );
-			}
 			
 			/* instancia leitor de arquivo passando como parâmetro o caminho
 			   absoluto de file.
@@ -301,7 +286,24 @@ public class Data {
 			/* inicia a estrutura de repetição, a fim de percorrer todo o arquivo,
 			   coletando a string linha a linha.
 			*/
-			do {				
+			do {
+				
+				/* identifica qual o arquivo de log será executado e inicializa os
+				   objetos act ou usr.
+				   Lança uma exceção caso o arquivo não exista
+				*/
+				if( fileName.equalsIgnoreCase( "http.csv" ) ) {
+					act = new Http();
+				} else if( fileName.equalsIgnoreCase( "device.csv" ) ) {
+					act = new MFlash();
+				} else if( fileName.equalsIgnoreCase( "logon.csv" ) ) {
+					act = new Logon();
+				} else if( fileName.equalsIgnoreCase( "LDAP.csv" ) ) {
+					usr = new User();
+				} else {
+					//throw( new Exception() );
+				}
+				
 				// lê a próxima linha
 				line = readFile.readLine();
 				/* verifica se o arquivo chegou ao final, ou seja, line recebe null.

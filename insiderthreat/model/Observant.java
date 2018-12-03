@@ -19,4 +19,24 @@ public class Observant {
 	public void putDevice( Device device ) {
 		this.devices.add( device );
 	}
+	
+	public void addActivityHistogram( int time ) {
+		this.histogram[time] += 1;
+	}
+
+	/**
+	 * @return the devices
+	 */
+	public List<Device> getDevices() {
+		return devices;
+	}
+
+	/**
+	 * @return the histogram
+	 */
+	public int[] getHistogram() {
+		return histogram;
+	}
+	
+	
 }
